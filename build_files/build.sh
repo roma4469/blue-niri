@@ -2,6 +2,10 @@
 
 set -ouex pipefail
 
+# Cleanup any stale old-format repo files for prior layers/base images
+rm -f /etc/yum.repos.d/_copr_ublues-os-akmods.repo
+rm -f /etc/yum.repos.d/_copr_avengemedia-dms.repo
+
 ### Install packages
 
 # Packages can be installed from any enabled yum repo on the image.
@@ -10,7 +14,7 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # Enable COPRs
-#dnf5 -y copr enable ublue/os-akmods
+dnf5 -y copr enable ublue/os-akmods
 dnf5 -y copr enable avengemedia/dms
 
 # Install packages
@@ -22,7 +26,7 @@ dnf5 install -y niri \
 	cliphist \
 
 # Disable COPRs so they don't end up enabled on the final image:
-#dnf5 -y copr disable ublue-os/akmods
+dnf5 -y copr disable ublue-os/akmods
 dnf5 -y copr disable avengemedia/dms
 
 #### Example for enabling a System Unit File
