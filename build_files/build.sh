@@ -14,7 +14,7 @@ rm -f /etc/yum.repos.d/_copr_avengemedia-dms.repo
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # Enable COPRs
-dnf5 -y copr enable ublue/os-akmods
+dnf5 -y copr enable ublue-os/akmods
 dnf5 -y copr enable avengemedia/dms
 
 # Install packages
