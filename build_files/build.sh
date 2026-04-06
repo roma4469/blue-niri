@@ -8,9 +8,12 @@ set -ouex pipefail
 # RPMfusion repos are available by default in ublue main images
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
+
+# Enable COPRs
+#dnf5 -y copr enable ublue/os-akmods
 dnf5 -y copr enable avengemedia/dms
 
-# this installs a package from fedora repos
+# Install packages
 dnf5 install -y niri \
 	kitty \
 	fish \
@@ -19,7 +22,7 @@ dnf5 install -y niri \
 	cliphist \
 
 # Disable COPRs so they don't end up enabled on the final image:
-dnf5 -y copr disable ublue-os/akmods
+#dnf5 -y copr disable ublue-os/akmods
 dnf5 -y copr disable avengedmedia/dms
 
 #### Example for enabling a System Unit File
