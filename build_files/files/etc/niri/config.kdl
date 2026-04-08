@@ -1,2 +1,8 @@
-spawn-at-startup "/usr/bin/kitty"
+spawn-at-startup "waybar"
+spawn-at-startup "swaybg" "-c" "#1e1e2e"
+spawn-at-startup "kitty"
 
+binds {
+    Mod+Return { spawn "kitty"; }
+    Mod+Q { close-window; }
+}

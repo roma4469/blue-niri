@@ -32,15 +32,10 @@ dnf5 install -y \
 #    cliphist
 
 install -Dm644 /ctx/files/etc/greetd/config.toml /etc/greetd/config.toml
-
-install -Dm755 /ctx/files/usr/bin/niri-session /usr/bin/niri-session
 install -Dm644 /ctx/files/etc/niri/config.kdl /etc/niri/config.kdl
 install -Dm644 /ctx/files/etc/skel/.config/niri/config.kdl /etc/skel/.config/niri/config.kdl
 install -Dm644 /ctx/files/etc/skel/.config/waybar/config.jsonc /etc/skel/.config/waybar/config.jsonc
 install -Dm644 /ctx/files/etc/skel/.config/waybar/style.css /etc/skel/.config/waybar/style.css
-
-# chown -R 1000:1000 /var/home/tester/.config || true
-
 
 dnf5 -y copr disable ublue-os/akmods
 # dnf5 -y copr disable avengemedia/dms
