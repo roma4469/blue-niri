@@ -1,0 +1,26 @@
+#!/bin/sh
+LOG=/tmp/niri-session.log
+
+: > "$LOG" 2>/dev/null || true
+exec >>"$LOG" 2>&1
+
+set -x
+echo "=== niri-session starting ==="
+date
+id
+env | sort
+echo "PATH=$PATH"
+
+echo "=== binaries ==="
+ls -l /usr/sbin/dbus-run-session /usr/sbin/niri /usr/bin/kitty || true
+
+echo "=== config ==="
+cat /etc/niri/config.kdl || true
+
+echo "=== launching niri ==="
+/usr/sbin/dbus-run-session /usr/sbin/niri -V --config /etc/niri/config.kdl
+rc=$?
+
+echo "=== niri exited with code $rc ==="
+sleep 300
+exit $rc

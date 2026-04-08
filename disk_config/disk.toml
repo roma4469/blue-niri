@@ -6,3 +6,4 @@ minsize = "20 GiB"
 name = "tester"
 password = "changeme"
 groups = ["wheel"]
+key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFIDPldZL2Fxz9jK4kRJWvE74H2f0KAif9VdW27rt6o5 github.com.1y1yc@passmail.com"

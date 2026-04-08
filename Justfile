@@ -254,9 +254,13 @@ _run-vm $target_image $tag $type $config:
     run_args+=(--env "RAM_SIZE=8G")
     run_args+=(--env "DISK_SIZE=64G")
     run_args+=(--env "TPM=Y")
-    run_args+=(--env "GPU=Y")
+    run_args+=(--env "GPU=N")
     run_args+=(--device=/dev/kvm)
-    run_args+=(--volume "${PWD}/${image_file}":"/boot.${type}")
+    if [[ "${image_file}" = /* ]]; then
+      run_args+=(--volume "${image_file}":"/boot.${type}")
+        else
+      run_args+=(--volume "${PWD}/${image_file}":"/boot.${type}")
+    fi
     run_args+=(docker.io/qemux/qemu)
 
     # Run the VM and open the browser to connect

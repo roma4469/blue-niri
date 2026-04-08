@@ -1,0 +1,16 @@
+For VM testing:
+  	just build
+  	just build-qcow2
+  	just run-vm
+
+For ISO testing:
+  	sudo just build-iso
+  	sudo just run-vm-iso
+
+Notes:
+  	If you want to set your Git identity during setup, run:
+  	GIT_USER_NAME="Your Name" GIT_USER_EMAIL="you@example.com
+
+A safe cleanup pattern for your repo right now is:
+	rm -rf output
+	find . -maxdepth 1 -type d \( -name 'build*' -o -name 'tmp*' \) -print

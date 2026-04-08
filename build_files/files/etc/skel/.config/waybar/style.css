@@ -1,0 +1,9 @@
+* {
+  font-family: sans-serif;
+  font-size: 14px;
+}
+
+window#waybar {
+  background: rgba(30, 30, 46, 0.9);
+  color: #ffffff;
+}
