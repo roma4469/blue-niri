@@ -6,7 +6,8 @@ rm -f /etc/yum.repos.d/_copr_ublues-os-akmods.repo
 rm -f /etc/yum.repos.d/_copr_avengemedia-dms.repo
 
 dnf5 -y copr enable ublue-os/akmods
-# dnf5 -y copr enable avengemedia/dms
+dnf5 -y copr enable avengemedia/dms
+dnf -y copr enable lihaohong/yazi
 
 ### Install packages
 # Packages can be installed from any enabled yum repo on the image.
@@ -40,11 +41,11 @@ install -Dm644 /ctx/files/etc/skel/.config/waybar/config.jsonc /etc/skel/.config
 install -Dm644 /ctx/files/etc/skel/.config/waybar/style.css /etc/skel/.config/waybar/style.css
 
 dnf5 -y copr disable ublue-os/akmods
-# dnf5 -y copr disable avengemedia/dms
+dnf5 -y copr disable avengemedia/dms
+dnf  -y copr disable lihaohong/yazi
 
 systemctl enable podman.socket
 systemctl enable greetd.service
-systemctl disable gdm.service || true
 systemctl set-default graphical.target
 
 # cleanup
