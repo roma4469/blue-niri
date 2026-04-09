@@ -29,10 +29,10 @@ dnf5 install -y \
 	swaybg \
 	wl-clipboard \
 	yazi \
-	mc 
-#    dms \
-#    dms-greeter \
-#    cliphist
+	mc \
+	dms \
+	dms-greeter \
+	cliphist
 
 install -Dm644 /ctx/files/etc/greetd/config.toml /etc/greetd/config.toml
 install -Dm644 /ctx/files/etc/niri/config.kdl /etc/niri/config.kdl
