@@ -26,7 +26,9 @@ dnf5 install -y \
 	fuzzel \
 	xwayland-satellite \
 	swaybg \
-	wl-clipboard 
+	wl-clipboard \
+	yazi \
+	mc 
 #    dms \
 #    dms-greeter \
 #    cliphist
