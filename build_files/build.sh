@@ -2,11 +2,10 @@
 set -ouex pipefail
 
 # cleanup old repo dust
-#rm -f /etc/yum.repos.d/_copr_ublues-os-akmods.repo
-#rm -f /etc/yum.repos.d/_copr_avengemedia-dms.repo
+# rm -f /etc/yum.repos.d/_copr_ublues-os-akmods.repo
+# rm -f /etc/yum.repos.d/_copr_avengemedia-dms.repo
 
 dnf5 -y copr enable ublue-os/akmods
-#dnf5 -y copr enable avengemedia/dms
 dnf -y copr enable lihaohong/yazi
 
 ### Install packages
@@ -25,7 +24,6 @@ dnf5 install -y \
 #install -Dm644 /ctx/files/etc/skel/.config/waybar/style.css /etc/skel/.config/waybar/style.css
 
 dnf5 -y copr disable ublue-os/akmods
-#dnf5 -y copr disable avengemedia/dms
 dnf  -y copr disable lihaohong/yazi
 
 systemctl enable podman.socket
